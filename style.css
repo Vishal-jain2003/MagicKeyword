@@ -1,97 +1,142 @@
-
-/* below is universal selector */
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-
 }
 
-/* this is body selector */
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    background: linear-gradient(to right, #e78d06, #fff, #0be825), url('nit.png');
-    background-size: cover;
-    background-position: top center; /* Set the background image to be positioned at the top center */
+    background: linear-gradient(to right, #e78d06, #fff, #0be825);
+    padding: 20px;
 }
 
-
-.container{
-    /* display: flex;
-    flex-direction: column;
-    padding: 5 rem; */
-   background: rgba(rgb(193, 130, 12), rgb(248, 241, 241), rgb(55, 228, 55), 0.25);
-   box-shadow: 0px 8px 32px 0px rgba(31, 38, 135, 0.37);
-   backdrop-filter: blur(15px);
-   border-radius: 45px;
-   /* border radius for rounded corner */
-   border: 1px solid rgba(rgb(193, 130, 12), rgb(248, 241, 241), rgb(55, 228, 55), 0.25);
-   transition: background 0.5s ease-in-out;
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    background: rgba(193, 130, 12, 0.25);
+    box-shadow: 0px 8px 32px 0px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(15px);
+    border-radius: 45px;
+    border: 1px solid rgba(193, 130, 12, 0.25);
+    transition: background 0.5s ease-in-out;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 20px; /* Add some space below the container */
+    flex-wrap: wrap; /* Allow wrapping of content */
 }
 
-.key-container{
+.left-side {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.person-image {
+    width: 150px;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.key-container {
     display: flex;
     flex-direction: column;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
-    padding: 15px;
+    padding: 20px;
     color: #ffffff;
-    margin: 4rem;
-    min-width: 150px;
     background: rgba(83, 226, 224, 0.874);
     box-shadow: 0px 8px 32px 0px rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(2.5px);
-    border-radius:10px;
+    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    transition: background 0.3s ease-in-out;
-}
-
-.key-container h4{
-    position: absolute;
-    top: -2rem;
-    left: 0;
-    text-align: center;
     width: 100%;
-
-    }
-
-    .key-content{
-        margin-top: 12px;
-
-    }
-
-
-    .container:hover{
-        background: rgba(163, 10, 10, 0.35);
 }
 
-
-
-.container:hover{
-    background: rgba(255, 255, 255, 0.35);
+.key-container h4 {
+    margin-bottom: 15px;
 }
 
-.key-container:hover{
-    
-        background: rgba(0, 255, 89, 0.7);
+.key-content {
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
-footer{
+footer {
     background-color: rgba(orange, #fff, green, 0.18);
-    flex: display;
     text-align: center;
     height: 56px;
     font-family: Roboto, sans-serif;
     font-weight: 200;
-   
+    margin-top: 20px;
+    width: 100%;
+}
 
+footer a {
+    color: #000;
+    text-decoration: none;
+}
 
-} 
+footer a:hover {
+    text-decoration: underline;
+}
 
+.click-button {
+    margin-top: auto;
+    background-color: #e78d06;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
 
+.click-button:hover {
+    background-color: #d17304;
+}
 
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .left-side {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .key-container {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .person-image {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .key-container {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .person-image {
+        width: 80px;
+    }
+}
