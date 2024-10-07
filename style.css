@@ -70,6 +70,41 @@ body {
     margin-bottom: 15px;
 }
 
+#virtual-keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow keyboard keys to wrap */
+    max-width: 100%; /* Ensure it fits the container */
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Center keys in each row */
+    flex-wrap: wrap; /* Allow keys to wrap in rows */
+    margin: 5px 0; /* Space between rows */
+}
+
+.key {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center; /* Center text */
+    align-items: center; /* Center text */
+    transition: background-color 0.3s ease;
+}
+
+.key:hover {
+    background-color: #ddd;
+}
+
 footer {
     background-color: rgba(orange, #fff, green, 0.18);
     text-align: center;
@@ -124,6 +159,17 @@ footer a:hover {
     .person-image {
         width: 100px;
     }
+
+    #virtual-keyboard {
+        flex-direction: row;
+        flex-wrap: wrap; /* Ensure keyboard keys can wrap */
+    }
+
+    .key {
+        width: 30px; /* Smaller keys for mobile */
+        height: 30px;
+        font-size: 14px; /* Smaller font for mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -138,5 +184,11 @@ footer a:hover {
 
     .person-image {
         width: 80px;
+    }
+
+    .key {
+        width: 25px; /* Smaller keys for mobile */
+        height: 25px;
+        font-size: 12px; /* Smaller font for mobile */
     }
 }
