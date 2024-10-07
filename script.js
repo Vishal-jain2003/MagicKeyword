@@ -9,8 +9,19 @@ container.innerHTML = generateHTML("-", "-", "-");
 // Event listener for keydown event
 window.addEventListener("keydown", (e) => {
     const key = e.key === " " ? "Space" : e.key;
-    const keyCode = e.key.charCodeAt(0) || "-"; // Handle potential edge cases
-    container.innerHTML = generateHTML(key, e.code, keyCode);
+    const keyCode = e.code; // e.code returns the physical key on the keyboard
+    const keyCharCode = key.charCodeAt(0) || "-"; // Handle potential edge cases
+    container.innerHTML = generateHTML(key, keyCode, keyCharCode);
+});
+
+// Add event listeners for virtual keys
+document.querySelectorAll('.key').forEach(key => {
+    key.addEventListener('click', () => {
+        const keyName = key.getAttribute('data-key');
+        const keyCode = `Key${keyName.toUpperCase()}`;
+        const keyCharCode = keyName.charCodeAt(0); // ASCII value for character
+        container.innerHTML = generateHTML(keyName, keyCode, keyCharCode);
+    });
 });
 
 // Function to generate HTML content
@@ -30,6 +41,7 @@ function generateHTML(key, code, keycode) {
         </div>
     `;
 }
+
 function redirectToPortfolio() {
     window.location.href = "https://vishal-jain2003.github.io/vishaljainportfolio/";
 }
